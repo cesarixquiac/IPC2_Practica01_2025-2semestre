@@ -42,7 +42,6 @@ public class Menu_Inicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 425));
 
         jButton1.setText("Registrar Inscripcion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
