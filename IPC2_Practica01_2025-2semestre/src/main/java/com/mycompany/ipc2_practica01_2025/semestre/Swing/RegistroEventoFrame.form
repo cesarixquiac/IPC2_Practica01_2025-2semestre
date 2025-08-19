@@ -127,7 +127,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="TextFieldCodeEvent">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="text" type="java.lang.String" value="Code"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -174,7 +174,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="TextFieldTitleEvent">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
+        <Property name="text" type="java.lang.String" value="title"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldTitleEventActionPerformed"/>
@@ -197,7 +197,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="TextFieldUbication">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
+        <Property name="text" type="java.lang.String" value="Ubication"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldUbicationActionPerformed"/>

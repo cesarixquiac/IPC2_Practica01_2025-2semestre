@@ -5,6 +5,7 @@
 package com.mycompany.ipc2_practica01_2025.semestre.Swing;
 
 import com.mycompany.ipc2_practica01_2025.semestre.DAO.EventoDAO;
+import com.mycompany.ipc2_practica01_2025.semestre.Menu_Inicial;
 import com.mycompany.ipc2_practica01_2025.semestre.Models.Evento;
 import com.mycompany.ipc2_practica01_2025.semestre.conexion.DatabaseConnection;
 import java.sql.Connection;
@@ -60,7 +61,7 @@ public class RegistroEventoFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Codigo del Evento:");
 
-        TextFieldCodeEvent.setText("jTextField1");
+        TextFieldCodeEvent.setText("Code");
 
         jLabel2.setText("Fecha del evento :");
         jLabel2.setPreferredSize(new java.awt.Dimension(100, 16));
@@ -78,7 +79,7 @@ public class RegistroEventoFrame extends javax.swing.JFrame {
         jLabel4.setText("Titulo del Evento :");
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 25));
 
-        TextFieldTitleEvent.setText("jTextField3");
+        TextFieldTitleEvent.setText("title");
         TextFieldTitleEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldTitleEventActionPerformed(evt);
@@ -91,7 +92,7 @@ public class RegistroEventoFrame extends javax.swing.JFrame {
         jLabel5.setPreferredSize(new java.awt.Dimension(100, 25));
         jLabel5.setRequestFocusEnabled(false);
 
-        TextFieldUbication.setText("jTextField4");
+        TextFieldUbication.setText("Ubication");
         TextFieldUbication.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldUbicationActionPerformed(evt);
@@ -234,7 +235,18 @@ public class RegistroEventoFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldUbicationActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:  
+        // Limpiar los campos de texto
+        TextFieldCodeEvent.setText("");
+        TextFieldTitleEvent.setText("");
+        TextFieldUbication.setText("");
+
+        ComboBoxTypeEvent.setSelectedIndex(0);
+
+        SpinnerCupoMaximo.setValue(0);
+        SpinnerCostEvent.setValue(0.0);
+
+        SpinnerDate.setValue(new java.util.Date());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ButtonInsertarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInsertarDatosActionPerformed
@@ -282,6 +294,10 @@ public class RegistroEventoFrame extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        Menu_Inicial menu_Inicial= new Menu_Inicial();  
+        menu_Inicial.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
