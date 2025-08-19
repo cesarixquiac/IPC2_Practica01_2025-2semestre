@@ -5,6 +5,7 @@
 package com.mycompany.ipc2_practica01_2025.semestre;
 
 import com.mycompany.ipc2_practica01_2025.semestre.Swing.RegistroEventoFrame;
+import com.mycompany.ipc2_practica01_2025.semestre.Swing.RegistroParticipantesFrame;
 
 /**
  *
@@ -189,6 +190,9 @@ public class Menu_Inicial extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+         RegistroParticipantesFrame registroParticipanteFrame= new RegistroParticipantesFrame();  
+        registroParticipanteFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
