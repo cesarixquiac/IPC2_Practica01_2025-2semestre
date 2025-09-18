@@ -1,0 +1,96 @@
+---
+config:
+  layout: elk
+---
+classDiagram
+    class Evento {
+        - codigoEvento: String
+        - fechaEvento: Date
+        - tipoEvento: String
+        - titulo: String
+        - ubicacion: String
+        - cupoMaximo: int
+        - costoInscripcion: double
+        + Evento(codigoEvento, fechaEvento, tipoEvento, titulo, ubicacion, cupoMaximo, costoInscripcion)
+    }
+    class Participante {
+        - nombreCompleto: String
+        - tipoParticipante: String
+        - institucion: String
+        - correo: String
+        + Participante(nombreCompleto, tipoParticipante, institucion, correo)
+    }
+    class Inscripcion {
+        - correoParticipante: String
+        - codigoEvento: String
+        - tipoInscripcion: String
+        + Inscripcion(correoParticipante, codigoEvento, tipoInscripcion)
+    }
+    class Pago {
+        - correoParticipante: String
+        - codigoEvento: String
+        - metodoPago: String
+        - monto: double
+        + Pago(correoParticipante, codigoEvento, metodoPago, monto)
+    }
+    class Actividad {
+        - codigoActividad: String
+        - codigoEvento: String
+        - tipoActividad: String
+        - titulo: String
+        - correoInstructor: String
+        - horaInicio: String
+        - horaFin: String
+        - cupoMaximo: int
+        + Actividad(codigoActividad, codigoEvento, tipoActividad, titulo, correoInstructor, horaInicio, horaFin, cupoMaximo)
+    }
+    class Asistencia {
+        - correoParticipante: String
+        - codigoActividad: String
+        + Asistencia(correoParticipante, codigoActividad)
+    }
+    class Certificado {
+        - correoParticipante: String
+        - codigoEvento: String
+        + generarCertificado()
+    }
+    class EventoDAO {
+        + insertarEvento(evento: Evento): boolean
+    }
+    class ParticipanteDAO {
+        + insertarParticipante(participante: Participante): boolean
+    }
+    class InscripcionDAO {
+        + registrarInscripcion(inscripcion: Inscripcion): boolean
+        + validarInscripcion(correo: String, codigoEvento: String): boolean
+    }
+    class PagoDAO {
+        + registrarPago(pago: Pago): boolean
+    }
+    class ActividadDAO {
+        + registrarActividad(actividad: Actividad): boolean
+    }
+    class AsistenciaDAO {
+        + registrarAsistencia(asistencia: Asistencia): boolean
+    }
+    class CertificadoDAO {
+        + generarCertificado(correo: String, codigoEvento: String): void
+    }
+    EventoDAO --> Evento
+    ParticipanteDAO --> Participante
+    InscripcionDAO --> Participante
+    InscripcionDAO --> Evento
+    PagoDAO --> Participante
+    PagoDAO --> Evento
+    ActividadDAO --> Actividad
+    ActividadDAO --> Evento
+    AsistenciaDAO --> Participante
+    AsistenciaDAO --> Actividad
+    CertificadoDAO --> Participante
+    CertificadoDAO --> Evento
+    Evento "1" --> "*" Actividad : contiene
+    Evento "1" --> "*" Inscripcion : tiene
+    Participante "1" --> "*" Inscripcion : realiza
+    Participante "1" --> "*" Pago : realiza
+    Participante "1" --> "*" Asistencia : asiste
+    Participante "1" --> "*" Certificado : recibe
